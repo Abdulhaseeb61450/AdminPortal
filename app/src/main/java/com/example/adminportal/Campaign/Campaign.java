@@ -72,7 +72,7 @@ public class Campaign extends AppCompatActivity {
 
         progressDialog.dismiss();
 
-        lv = findViewById(R.id.currentcampaign);
+
         //lv.setDescendantFocusability(FOCUS_BLOCK_DESCENDANTS);
 
 
@@ -122,15 +122,16 @@ public class Campaign extends AppCompatActivity {
                 startActivity(intent);
                 break;
         }
-        switch (v.getId()) {
+        /*switch (v.getId()) {
             case R.id.play:
-                /*Button play = findViewById(R.id.play);*/
-                /*String PLAY = play.getText().toString();*/
-                /*play.setText("End");*/
-                /*Intent intent = new Intent(Campaign.this,StopDetails.class);
-                startActivity(intent);*/
+
+                *//*Button play = findViewById(R.id.play);*//*
+                *//*String PLAY = play.getText().toString();*//*
+                *//*play.setText("End");*//*
+                *//*Intent intent = new Intent(Campaign.this,StopDetails.class);
+                startActivity(intent);*//*
                 break;
-        }
+        }*/
     }
 
     private void GetCurrentData()
