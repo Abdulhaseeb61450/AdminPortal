@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -19,12 +20,15 @@ import com.example.adminportal.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static android.view.ViewGroup.FOCUS_BLOCK_DESCENDANTS;
+
 
 public class TodayCampaign extends Fragment {
 
     public ListAdapter adapter;
     public Button VIEW,play;
     public  ArrayList<HashMap<String, String>> StudentDetails = new ArrayList<>();
+    public ListView lv;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,9 +47,11 @@ public class TodayCampaign extends Fragment {
         }
 
 
-        ListView lv = (ListView) view.findViewById(R.id.currentcampaign);
+        lv = view.findViewById(R.id.currentcampaign);
         VIEW = view.findViewById(R.id.view);
         play = view.findViewById(R.id.play);
+
+        lv.setDescendantFocusability(FOCUS_BLOCK_DESCENDANTS);
 
 
         adapter = new SimpleAdapter(
@@ -54,6 +60,15 @@ public class TodayCampaign extends Fragment {
                 R.id.username,R.id.sender,R.id.totalsms,R.id.campaigntime});
         lv.setAdapter(adapter);
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
+            {
+                Toast.makeText(getActivity(), "Stop Clicking me", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         return view;
     }
+
 }

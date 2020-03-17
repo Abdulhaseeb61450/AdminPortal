@@ -37,11 +37,11 @@
         <activity android:name=".Login.MainActivity" />
         <activity android:name=".Masking.MaskRoutes" />
         <activity android:name=".Masking.UpdateRoutes" />
-        <activity android:name=".Campaign.Campaign" />
+        <activity android:name=".Contact.ContactManagement" />
         <activity android:name=".Campaign.ViewDetails" />
         <activity android:name=".Campaign.StopDetails" />
         <activity android:name=".Campaign.UpdateCampaignRoutes" />
-        <activity android:name=".Contact.ContactManagement">
+        <activity android:name=".Campaign.Campaign">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
