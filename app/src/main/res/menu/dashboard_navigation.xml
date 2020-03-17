@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_dash"
+        android:icon="@drawable/ic_today_black_24dp"
+        android:title="Dashboard" />
+
+    <item
+        android:id="@+id/nav_manage"
+        android:icon="@drawable/ic_today_black_24dp"
+        android:title="Masking" />
+
+    <item
+        android:id="@+id/nav_comp"
+        android:icon="@drawable/ic_stop_black_24dp"
+        android:title="Campaign" />
+
+    <item
+        android:id="@+id/nav_repo"
+        android:icon="@drawable/ic_today_black_24dp"
+        android:title="Report" />
+
+    <item
+        android:id="@+id/nav_api"
+        android:icon="@drawable/ic_next_week_black_24dp"
+        android:title="API" />
+
+</menu>

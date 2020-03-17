@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".MNP.MNP">
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/simpleImageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mnp" />
+
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/layout_corners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="Mobile No: ">
+        </TextView>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="923102922930"
+            android:textColor="@color/white"></EditText>
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="MNP: ">
+        </TextView>
+
+        <Spinner
+            android:padding="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/MNPSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"
+            android:layout_marginBottom="@dimen/_10sdp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/Check"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:text="Check"
+                android:textColor="@color/orange"
+                android:background="@drawable/button_rounded"
+                android:layout_marginBottom="20dp" />
+
+            <Button
+                android:id="@+id/Remove"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:text="Remove"
+                android:textColor="@color/orange"
+                android:background="@drawable/button_rounded"
+                android:layout_marginBottom="20dp" />
+
+            <Button
+                android:id="@+id/Update"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:textColor="@color/orange"
+                android:background="@drawable/button_rounded"
+                android:layout_marginBottom="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

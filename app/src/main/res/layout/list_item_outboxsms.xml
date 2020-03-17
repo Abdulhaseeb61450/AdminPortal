@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/Main"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/layout_corners"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="132dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dp"
+                android:text="SMS Type:      "
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size15dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/SmsType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="haseeb"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="132dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dp"
+                android:text="Sender:        "
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size15dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/Sender"
+                android:layout_width="wrap_content"
+                android:text="haseeb"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="132dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dp"
+                android:text="Reciever:  "
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Reciever"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="haseeb"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="132dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dp"
+                android:text="Date Time:      "
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size15dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/DateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="haseeb"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

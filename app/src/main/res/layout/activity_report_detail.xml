@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".LiveReports.ReportDetail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/simpleImageView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/live" />
+
+        <LinearLayout
+            android:id="@+id/Main"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/layout_corners"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="User Name: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/UserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:text="SMS Type: "
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/SmsType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Company Name: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/CompanyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Sender: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/Sender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Reciever: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/Reciever"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Message: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/Message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Sent Time: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/SentTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Network Time: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/NetworkTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Status: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/Status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Cost: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/Cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

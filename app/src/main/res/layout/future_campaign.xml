@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/simpleImageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/camp" />
+
+    <TextView
+        android:layout_below="@+id/simpleImageView"
+        android:id="@+id/textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Future Campaign"
+        android:textColor="@color/orange"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <ListView
+        android:background="@drawable/layout_table_corners"
+        android:id="@+id/futurecampaign"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="5dp"
+        android:divider="@android:color/white"
+        android:layout_marginRight="@dimen/text_size15dp"
+        android:layout_marginLeft="@dimen/text_size15dp"
+        android:dividerHeight="2dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+</RelativeLayout>

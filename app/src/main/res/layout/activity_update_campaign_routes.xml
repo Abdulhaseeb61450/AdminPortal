@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".Campaign.UpdateCampaignRoutes">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/simpleImageView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camp" />
+
+        <LinearLayout
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/layout_corners"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/masking"
+                android:textAlignment="center"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:textStyle="bold">
+            </TextView>
+
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:text="Mobilink: ">
+            </TextView>
+
+            <Spinner
+                android:padding="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/Mobilink"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.Spinner"/>
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:text="Mobilink Flog: ">
+            </TextView>
+
+            <Spinner
+                android:padding="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/Mobilinkflog"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.Spinner"/>
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:text="Warid: ">
+            </TextView>
+
+            <Spinner
+                android:padding="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/Warid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.Spinner"/>
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:text="Warid Flog: ">
+            </TextView>
+
+            <Spinner
+                android:padding="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/Waridflog"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.Spinner"/>
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:text="Telenor: ">
+            </TextView>
+
+            <Spinner
+                android:padding="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/Telenor"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.Spinner"/>
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:text="Telenor Flog: ">
+            </TextView>
+
+            <Spinner
+                android:padding="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/Telenorflog"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.Spinner"/>
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:text="Zong: ">
+            </TextView>
+
+            <Spinner
+                android:padding="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/Zong"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.Spinner"/>
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:text="Zong Flog: ">
+            </TextView>
+
+            <Spinner
+                android:padding="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/Zongflog"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.Spinner"/>
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:text="Ufone: ">
+            </TextView>
+
+            <Spinner
+                android:padding="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/Ufone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.Spinner"/>
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:text="Ufone Flog: ">
+            </TextView>
+
+            <Spinner
+                android:padding="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/Ufoneflog"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.Spinner"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/Updateroutes"
+                    android:layout_width="130dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:textColor="#FFA500"
+                    android:layout_height="wrap_content"
+                    android:text="Update Routes"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_rounded" />
+
+                <Button
+                    android:id="@+id/Updateflogs"
+                    android:layout_width="130dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:textColor="#FFA500"
+                    android:layout_height="wrap_content"
+                    android:text="Update Flogs"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_rounded" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

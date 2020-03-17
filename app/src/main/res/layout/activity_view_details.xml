@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Campaign.ViewDetails">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/simpleImageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/camp" />
+
+    <LinearLayout
+        android:id="@+id/Main"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/layout_corners"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="Camp ID: "
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/campid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:text="Sender: "
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/sender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="Campaign Time: "
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/campaigntime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="Mobilink: "
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/mobilink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="Telenor: "
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/telenor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="Zong: "
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/zong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="Warid: "
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/warid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="Ufone: "
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/ufone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="Others: "
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/others"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="TotalSMS: "
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/totalsms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="Total Sent: "
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/totalsent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:text="Remaining SMS: "
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/remainingsms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size15dp"
+                android:textColor="@color/white"
+                android:paddingBottom="2dp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+        </LinearLayout>
+
+</ScrollView>

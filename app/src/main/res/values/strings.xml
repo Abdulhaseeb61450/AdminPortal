@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Admin Portal</string>
+
+    <string name="title_shop">Current</string>
+    <string name="title_gifts">Future</string>
+    <string name="title_cart">End</string>
+    <string name="title_profile">Profile</string>
+
+    <string-array name="outbox">
+        <item>SMS Type</item>
+        <item>Sender</item>
+        <item>Reciever</item>
+        <item>DateTime</item>
+    </string-array>
+
+
+    <string-array name="summary">
+        <item>SMS Type</item>
+        <item>Sender</item>
+        <item>Date</item>
+    </string-array>
+
+    <string-array name="logs">
+        <item>DateTime</item>
+        <item>IP</item>
+        <item>User ID</item>
+    </string-array>
+
+    <string-array name="names">
+        <item>2</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+    </string-array>
+</resources>

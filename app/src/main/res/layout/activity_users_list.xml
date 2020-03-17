@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".UserManagement.UsersList">
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/simpleImageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/users" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/layout_corners">
+
+        <RadioGroup
+            android:id="@+id/Gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center">
+
+                <RadioButton
+                    android:id="@+id/User"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp" />
+
+                <RadioButton
+                    android:id="@+id/Reseller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reseller"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/layout_table_corners"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_marginTop="@dimen/text_size10dp"
+                android:id="@+id/inputSearch"
+                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:hint="Search"
+                android:textColor="@color/white"
+                android:inputType="textVisiblePassword"/>
+
+            <Button
+                android:id="@+id/Add"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="#FFA500"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_rounded" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

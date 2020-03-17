@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".UserManagement.UpdateUser">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/simpleImageView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/users" />
+
+        <LinearLayout
+            android:id="@+id/Main"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/layout_corners"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="User Name: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/UserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:text="Password: "
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/Password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Full Name: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/FullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Mobile No: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/MobileNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Email: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/Email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Maskings: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/Maskings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Expiry Date: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/ExpiryDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Status: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/Status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Initial Balance: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/InitialBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="SMS Rate: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/SmsRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <Button
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/Edit"
+                android:layout_width="130dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textColor="@color/orange"
+                android:background="@drawable/button_rounded"
+                android:layout_marginBottom="@dimen/_10sdp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

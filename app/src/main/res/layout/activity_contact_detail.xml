@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Contact.ContactDetail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/simpleImageView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camp" />
+
+        <LinearLayout
+            android:id="@+id/Main"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/layout_corners"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:text="Name: "
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:text="Contact No: "
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/contactNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size15dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    android:textStyle="italic"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center">
+
+                <Button
+                    android:layout_marginTop="@dimen/text_size15dp"
+                    android:id="@+id/update"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:text=" Update "
+                    android:onClick="UPDATE"
+                    android:textColor="@color/orange"
+                    android:background="@drawable/button_rounded">
+                </Button>
+
+                <Button
+                    android:layout_marginTop="@dimen/text_size15dp"
+                    android:id="@+id/delete"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:onClick="DELETE"
+                    android:text=" DELETE "
+                    android:textColor="@color/orange"
+                    android:background="@drawable/button_rounded">
+                </Button>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".Masking.UpdateRoutes">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/simpleImageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/header" />
+
+    <LinearLayout
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/layout_corners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/masking"
+            android:textAlignment="center"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textStyle="bold">
+        </TextView>
+
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="Mobilink Pure: ">
+        </TextView>
+
+        <Spinner
+            android:padding="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/MobilinkPure"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"/>
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="Mobilink MNP: ">
+        </TextView>
+
+        <Spinner
+            android:padding="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/MobilinkMNP"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"/>
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="Warid Pure: ">
+        </TextView>
+
+        <Spinner
+            android:padding="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/WaridPure"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"/>
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="Warid MNP: ">
+        </TextView>
+
+        <Spinner
+            android:padding="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/WaridMNP"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"/>
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="Telenor Pure: ">
+        </TextView>
+
+        <Spinner
+            android:padding="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/TelenorPure"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"/>
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#ffffff"
+            android:text="Telenor MNP: ">
+        </TextView>
+
+        <Spinner
+            android:padding="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/TelenorMNP"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"/>
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#ffffff"
+            android:text="Zong Pure: ">
+        </TextView>
+
+        <Spinner
+            android:padding="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/ZongPure"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"/>
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#ffffff"
+            android:text="Zong MNP: ">
+        </TextView>
+
+        <Spinner
+            android:padding="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/ZongMNP"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"/>
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#ffffff"
+            android:text="Ufone Pure: ">
+        </TextView>
+
+        <Spinner
+            android:padding="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/UfonePure"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"/>
+
+        <TextView
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#ffffff"
+            android:text="Ufone MNP: ">
+        </TextView>
+
+        <Spinner
+            android:padding="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/UfoneMNP"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"/>
+
+        <Button
+            android:id="@+id/Update"
+            android:layout_width="130dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:textColor="#FFA500"
+            android:layout_height="wrap_content"
+            android:text="Edit Routes"
+            android:layout_marginBottom="20dp"
+            android:onClick="UpdateRoutes"
+            android:background="@drawable/button_rounded" />
+
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

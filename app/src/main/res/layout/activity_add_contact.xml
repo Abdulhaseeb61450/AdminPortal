@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Contact.AddContact">
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/simpleImageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/camp" />
+
+    <LinearLayout
+        android:id="@+id/first"
+        android:layout_below="@+id/simpleImageView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/layout_corners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_margin="5dp"
+            android:id="@+id/name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Name"
+            android:textColor="@color/black"
+            android:inputType="textVisiblePassword"/>
+
+
+        <EditText
+            android:layout_margin="5dp"
+            android:id="@+id/number"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Number"
+            android:textColor="@color/black"
+            android:inputType="textVisiblePassword"/>
+
+        <Button
+            android:id="@+id/Save"
+            android:layout_width="130dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:text="Add Contact"
+            android:textColor="@color/orange"
+            android:background="@drawable/button_rounded"
+            android:layout_marginBottom="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second"
+        android:layout_below="@+id/simpleImageView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/layout_corners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Import"
+            android:layout_width="130dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:text="Import"
+            android:textColor="@color/orange"
+            android:background="@drawable/button_rounded"
+            android:layout_marginBottom="20dp"
+            android:onClick="GetFilePath"/>
+
+        <Button
+            android:id="@+id/Export"
+            android:layout_width="130dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:text="Export"
+            android:textColor="@color/orange"
+            android:background="@drawable/button_rounded"
+            android:layout_marginBottom="20dp"
+            android:onClick="EXPORT"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
