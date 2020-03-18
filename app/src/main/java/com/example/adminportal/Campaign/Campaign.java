@@ -124,11 +124,11 @@ public class Campaign extends AppCompatActivity {
         /*switch (v.getId()) {
             case R.id.play:
 
-                *//*Button play = findViewById(R.id.play);*//*
-                *//*String PLAY = play.getText().toString();*//*
-                *//*play.setText("End");*//*
-                *//*Intent intent = new Intent(Campaign.this,StopDetails.class);
-                startActivity(intent);*//*
+                Button play = findViewById(R.id.play);
+                String PLAY = play.getText().toString();
+                play.setText("End");
+                Intent intent = new Intent(Campaign.this,StopDetails.class);
+                startActivity(intent);
                 break;
         }*/
     }
@@ -154,16 +154,35 @@ public class Campaign extends AppCompatActivity {
                             JSONObject RESPONSE = response.getJSONObject("response");
                             for (int i = 0; i < response.length(); i++)
                             {
+
+                                String campid = RESPONSE.getString("campid");
+                                String mobilink = RESPONSE.getString("mobilink");
+                                String telenor = RESPONSE.getString("telenor");
+                                String zong = RESPONSE.getString("zong");
                                 String username = RESPONSE.getString("username");
                                 String sender = RESPONSE.getString("sender");
                                 String campaigntime = RESPONSE.getString("campaigntime");
                                 String totalsms = RESPONSE.getString("totalsms");
+                                String warid = RESPONSE.getString("warid");
+                                String ufone = RESPONSE.getString("ufone");
+                                String others = RESPONSE.getString("others");
+                                String totalsent = RESPONSE.getString("totalsent");
+                                String remainingsms = RESPONSE.getString("remainingsms");
 
                                 HashMap<String, String> Detail = new HashMap<>();
                                 Detail.put("username",username);
                                 Detail.put("sender",sender);
                                 Detail.put("campaigntime",campaigntime);
                                 Detail.put("totalsms",totalsms);
+                                Detail.put("campid",campid);
+                                Detail.put("mobilink",mobilink);
+                                Detail.put("telenor",telenor);
+                                Detail.put("zong",zong);
+                                Detail.put("warid",warid);
+                                Detail.put("ufone",ufone);
+                                Detail.put("others",others);
+                                Detail.put("totalsent",totalsent);
+                                Detail.put("remainingsms",remainingsms);
 
                                 Today.add(Detail);
 
@@ -212,16 +231,34 @@ public class Campaign extends AppCompatActivity {
                             JSONObject RESPONSE = response.getJSONObject("response");
                             for (int i = 0; i < response.length(); i++)
                             {
+                                String campid = RESPONSE.getString("campid");
+                                String mobilink = RESPONSE.getString("mobilink");
+                                String telenor = RESPONSE.getString("telenor");
+                                String zong = RESPONSE.getString("zong");
                                 String username = RESPONSE.getString("username");
                                 String sender = RESPONSE.getString("sender");
                                 String campaigntime = RESPONSE.getString("campaigntime");
                                 String totalsms = RESPONSE.getString("totalsms");
+                                String warid = RESPONSE.getString("warid");
+                                String ufone = RESPONSE.getString("ufone");
+                                String others = RESPONSE.getString("others");
+                                String totalsent = RESPONSE.getString("totalsent");
+                                String remainingsms = RESPONSE.getString("remainingsms");
 
                                 HashMap<String, String> Detail = new HashMap<>();
                                 Detail.put("username",username);
                                 Detail.put("sender",sender);
                                 Detail.put("campaigntime",campaigntime);
                                 Detail.put("totalsms",totalsms);
+                                Detail.put("campid",campid);
+                                Detail.put("mobilink",mobilink);
+                                Detail.put("telenor",telenor);
+                                Detail.put("zong",zong);
+                                Detail.put("warid",warid);
+                                Detail.put("ufone",ufone);
+                                Detail.put("others",others);
+                                Detail.put("totalsent",totalsent);
+                                Detail.put("remainingsms",remainingsms);
 
                                 Future.add(Detail);
 
@@ -270,16 +307,34 @@ public class Campaign extends AppCompatActivity {
                             JSONObject RESPONSE = response.getJSONObject("response");
                             for (int i = 0; i < response.length(); i++)
                             {
+                                String campid = RESPONSE.getString("campid");
+                                String mobilink = RESPONSE.getString("mobilink");
+                                String telenor = RESPONSE.getString("telenor");
+                                String zong = RESPONSE.getString("zong");
                                 String username = RESPONSE.getString("username");
                                 String sender = RESPONSE.getString("sender");
                                 String campaigntime = RESPONSE.getString("campaigntime");
                                 String totalsms = RESPONSE.getString("totalsms");
+                                String warid = RESPONSE.getString("warid");
+                                String ufone = RESPONSE.getString("ufone");
+                                String others = RESPONSE.getString("others");
+                                String totalsent = RESPONSE.getString("totalsent");
+                                String remainingsms = RESPONSE.getString("remainingsms");
 
                                 HashMap<String, String> Detail = new HashMap<>();
                                 Detail.put("username",username);
                                 Detail.put("sender",sender);
                                 Detail.put("campaigntime",campaigntime);
                                 Detail.put("totalsms",totalsms);
+                                Detail.put("campid",campid);
+                                Detail.put("mobilink",mobilink);
+                                Detail.put("telenor",telenor);
+                                Detail.put("zong",zong);
+                                Detail.put("warid",warid);
+                                Detail.put("ufone",ufone);
+                                Detail.put("others",others);
+                                Detail.put("totalsent",totalsent);
+                                Detail.put("remainingsms",remainingsms);
 
                                 Previous.add(Detail);
 

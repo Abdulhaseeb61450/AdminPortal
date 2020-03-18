@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Campaign.Campaign"></activity>
+        <activity android:name=".ComposeSMS.CampaignSMS"></activity>
         <activity android:name=".Reports.Logs" />
         <activity android:name=".Reports.Summary" />
         <activity android:name=".PDFTEST" />
@@ -28,7 +28,7 @@
         <activity android:name=".UserManagement.UsersList" />
         <activity android:name=".UserManagement.AddReseller" />
         <activity android:name=".MNP.MNP" />
-        <activity android:name=".Dashboard.AdminDashboard" />
+        <activity android:name=".Campaign.Campaign" />
         <activity android:name=".Contact.AddContact" />
         <activity android:name=".API.APIs" />
         <activity android:name=".LiveReports.LiveReports" />
@@ -42,7 +42,7 @@
         <activity android:name=".Campaign.ViewDetails" />
         <activity android:name=".Campaign.StopDetails" />
         <activity android:name=".Campaign.UpdateCampaignRoutes" />
-        <activity android:name=".ComposeSMS.CampaignSMS">
+        <activity android:name=".Dashboard.AdminDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

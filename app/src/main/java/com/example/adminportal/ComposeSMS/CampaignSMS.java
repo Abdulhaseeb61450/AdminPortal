@@ -139,6 +139,4 @@ public class CampaignSMS extends AppCompatActivity {
     {
 
     }
-
-
 }

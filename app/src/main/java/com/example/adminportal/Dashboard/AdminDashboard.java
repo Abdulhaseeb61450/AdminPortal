@@ -20,6 +20,8 @@ import com.example.adminportal.Campaign.Campaign;
 import com.example.adminportal.ComposeSMS.QuickSMS;
 import com.example.adminportal.Contact.ContactManagement;
 import com.example.adminportal.LiveReports.LiveReports;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.MNP.MNP;
 import com.example.adminportal.Masking.MaskRoutes;
 import com.example.adminportal.R;
@@ -29,7 +31,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import static com.example.adminportal.Login.MainActivity.mypreference;
 
-public class AdminDashboard extends AppCompatActivity {
+public class AdminDashboard extends AppCompatActivity implements LogOutTimerUtil.LogOutListener {
 
     SharedPreferences sharedpreferences;
     int ALL_PERMISSIONS = 101;
@@ -126,6 +128,7 @@ public class AdminDashboard extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        LogOutTimerUtil.startLogoutTimer(this, this);
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.clear();
         editor.commit();
@@ -135,5 +138,35 @@ public class AdminDashboard extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finishAffinity();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void doLogout() {
+       Intent intent = new Intent(AdminDashboard.this, MainActivity.class);
+       startActivity(intent);
     }
 }

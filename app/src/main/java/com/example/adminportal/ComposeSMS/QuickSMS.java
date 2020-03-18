@@ -110,7 +110,6 @@ public class QuickSMS extends AppCompatActivity {
 
     }
 
-
     public void RESET(View view)
     {
         contactlist.setText("");
