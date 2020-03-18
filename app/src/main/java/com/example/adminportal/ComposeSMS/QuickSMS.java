@@ -24,7 +24,6 @@ public class QuickSMS extends AppCompatActivity {
     TextView contactlimit,messagelimit;
     public int ascii,decreaselimit;
     public int limit = 160;
-
     public int COUNT = 0;
 
     @Override
