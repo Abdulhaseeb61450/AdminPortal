@@ -18,7 +18,5 @@ public class UsersList extends AppCompatActivity {
         setContentView(R.layout.activity_users_list);
 
         RadioButton selectedRadioButton = (RadioButton) findViewById(selectedRadioButtonID);
-        Type = selectedRadioButton.getText().toString().trim();
-        Type = selectedRadioButton.getText().toString().trim();
     }
 }

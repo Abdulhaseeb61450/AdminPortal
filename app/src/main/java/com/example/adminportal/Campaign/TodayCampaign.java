@@ -20,6 +20,7 @@ import androidx.fragment.app.ListFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.toolbox.StringRequest;
+import com.example.adminportal.Database.DbHandler;
 import com.example.adminportal.R;
 
 import org.w3c.dom.Text;
@@ -35,14 +36,15 @@ public class TodayCampaign extends Fragment {
     public SimpleAdapter adapter;
     public Button VIEW,play;
     public  ArrayList<HashMap<String, String>> StudentDetails = new ArrayList<>();
-    public  ArrayList<HashMap<String, String>> Testing = new ArrayList<>();
     public ListView lv;
-
-    TextView Startstop;
+    public DbHandler db;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.today_campaign, container, false);
+        final View view = inflater.inflate(R.layout.today_campaign, container, false);
+
+        db = new DbHandler(getActivity());
+        //StudentDetails = db.AllCampaignList();
 
         for (int i = 0; i<11;i++)
         {
@@ -52,17 +54,13 @@ public class TodayCampaign extends Fragment {
             Detail.put("campaigntime","22-Jan-2020 01-00 PM");
             Detail.put("totalsms","250 = 150 + 100");
 
-
             StudentDetails.add(Detail);
         }
 
 
         lv = view.findViewById(R.id.currentcampaign);
         VIEW = view.findViewById(R.id.view);
-        Startstop = view.findViewById(R.id.startstop);
-        //play = view.findViewById(R.id.play);
-
-       /* lv.setDescendantFocusability(FOCUS_BLOCK_DESCENDANTS);*/
+        play = view.findViewById(R.id.play);
 
 
         adapter = new SimpleAdapter(
@@ -77,14 +75,16 @@ public class TodayCampaign extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
+
+                final TextView tv_id = (TextView) view.findViewById(R.id.username);
+                String fd = tv_id.getText().toString();
                 Log.d("hello","after Adaptor1");
                 Object aa = lv.getItemAtPosition(position);
                 Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
                 Log.d("hello", String.valueOf(aa));
+                Log.d("hello", fd);
 
-                 HashMap<String,String> test = StudentDetails.get(position);
                  adapter.notifyDataSetChanged();
-
             }
         });
 

@@ -24,6 +24,9 @@ public class QuickSMS extends AppCompatActivity {
     TextView contactlimit,messagelimit;
     public int ascii,decreaselimit;
     public int limit = 160;
+
+    public int COUNT = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +41,14 @@ public class QuickSMS extends AppCompatActivity {
         contactlist.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                contactlimit.setText("0/200");
+                contactlimit.setText("200/200");
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                contactlimit.setText(200 - contactlist.getText().length() + "/200");
+                String st = s.toString();
+                countChar(st,',');
+                contactlimit.setText(200 - COUNT + "/200");
             }
 
             @Override
@@ -55,7 +60,7 @@ public class QuickSMS extends AppCompatActivity {
         message.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                messagelimit.setText("0/160");
+                messagelimit.setText("160/160");
             }
 
             @Override
@@ -83,7 +88,7 @@ public class QuickSMS extends AppCompatActivity {
                 }
                 else
                 {
-                    char a = s.charAt(before);
+                    char a = s.charAt(count);
                     ascii = (int) a;
                     if (ascii>=1575 && ascii<=1746)
                     {
@@ -119,5 +124,18 @@ public class QuickSMS extends AppCompatActivity {
     {
         Intent intent = new Intent(QuickSMS.this, AdminDashboard.class);
         startActivity(intent);
+    }
+
+    public int countChar(String str, char c)
+    {
+
+        COUNT = 0;
+
+        for(int i=0; i < str.length(); i++)
+        {    if(str.charAt(i) == c)
+            COUNT++;
+        }
+
+        return COUNT;
     }
 }

@@ -73,7 +73,6 @@ public class Campaign extends AppCompatActivity {
         progressDialog.dismiss();
 
 
-        //lv.setDescendantFocusability(FOCUS_BLOCK_DESCENDANTS);
 
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);

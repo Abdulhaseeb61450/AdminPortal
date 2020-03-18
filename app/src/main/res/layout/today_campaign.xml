@@ -24,7 +24,6 @@
 
 
     <ListView
-        android:background="@drawable/layout_table_corners"
         android:id="@+id/currentcampaign"
         android:layout_below="@id/textView"
         android:layout_marginTop="5dp"

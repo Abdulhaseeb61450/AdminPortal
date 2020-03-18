@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.android.volley.toolbox.StringRequest;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -50,6 +52,13 @@ public class DbHandler extends SQLiteOpenHelper {
     private static final String KEY_IP = "Ip";
     private static final String KEY_Activity = "Activity";
 
+    private static final String TABLE_CAMPAIGN = "Campaign";
+    private static final String KEY_CAMP_ID = "Camp Id";
+    private static final String KEY_CAMPAIGNTIME = "Campaign Time";
+    private static final String KEY_OTHERS = "Others";
+    private static final String KEY_TOTALSMS = "Total SMS";
+    private static final String KEY_TOTALSENT = "Total Sent";
+    private static final String KEY_REMAININGSMS = "Remaining SMS";
 
 
     public DbHandler(Context context){
@@ -102,11 +111,31 @@ public class DbHandler extends SQLiteOpenHelper {
                 + KEY_IP + " TEXT,"
                 + KEY_Activity + " TEXT"+ ")";
         db.execSQL(CREATE_TABLE4);
+
+        String CREATE_TABLE5 = "CREATE TABLE " + TABLE_CAMPAIGN + "("
+                + KEY_CAMP_ID + " TEXT,"
+                + KEY_SENDER + " TEXT,"
+                + KEY_CAMPAIGNTIME + " TEXT,"
+                + KEY_MOBILINK + " TEXT,"
+                + KEY_TELENOR + " TEXT,"
+                + KEY_UFONE + " TEXT,"
+                + KEY_WARID + " TEXT,"
+                + KEY_ZONG + " TEXT,"
+                + KEY_OTHERS + " TEXT,"
+                + KEY_TOTALSMS + " TEXT,"
+                + KEY_TOTALSENT + " TEXT,"
+                + KEY_REMAININGSMS + "TEXT"+ ")";
+        db.execSQL(CREATE_TABLE5);
+
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_Contact);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_API);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CAMPAIGN);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_Activity);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SUMMARY);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_OUTBOX);
         onCreate(db);
     }
 
@@ -276,6 +305,52 @@ public class DbHandler extends SQLiteOpenHelper {
         cursor.close();
         return  ActivityList;
     }
+    //*******************************************************************************************************************************//
+    //*******************************************************************************************************************************//
+    public void InsertCampaignDetails(String campid, String campaigntime, String sender, String mobilink, String ufone, String zong, String warid, String telenor, String others,String totalsms, String totalsent,String remainingsms){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cValues = new ContentValues();
+        cValues.put(KEY_CAMP_ID, campid);
+        cValues.put(KEY_SENDER, sender);
+        cValues.put(KEY_CAMPAIGNTIME, campaigntime);
+        cValues.put(KEY_MOBILINK, mobilink);
+        cValues.put(KEY_UFONE, ufone);
+        cValues.put(KEY_ZONG, zong);
+        cValues.put(KEY_WARID, warid);
+        cValues.put(KEY_TELENOR, telenor);
+        cValues.put(KEY_OTHERS, others);
+        cValues.put(KEY_TOTALSMS, totalsms);
+        cValues.put(KEY_TOTALSENT, totalsent);
+        cValues.put(KEY_REMAININGSMS, remainingsms);
+        long newRowId = db.insert(TABLE_CAMPAIGN,null, cValues);
+        db.close();
+    }
+
+    public ArrayList<HashMap<String, String>> AllCampaignList(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<HashMap<String, String>> CampaignList = new ArrayList<>();
+        String query = "SELECT * FROM "+ TABLE_CAMPAIGN;
+        Cursor cursor = db.rawQuery(query, null);
+        while (cursor.moveToNext()) {
+            HashMap<String, String> Campaign = new HashMap<>();
+            Campaign.put("campid",cursor.getString(cursor.getColumnIndex(KEY_CAMP_ID)));
+            Campaign.put("campaigntime", cursor.getString(cursor.getColumnIndex(KEY_CAMPAIGNTIME)));
+            Campaign.put("sender",cursor.getString(cursor.getColumnIndex(KEY_SENDER)));
+            Campaign.put("mobilink", cursor.getString(cursor.getColumnIndex(KEY_MOBILINK)));
+            Campaign.put("ufone",cursor.getString(cursor.getColumnIndex(KEY_UFONE)));
+            Campaign.put("zong", cursor.getString(cursor.getColumnIndex(KEY_ZONG)));
+            Campaign.put("warid", cursor.getString(cursor.getColumnIndex(KEY_WARID)));
+            Campaign.put("telenor", cursor.getString(cursor.getColumnIndex(KEY_TELENOR)));
+            Campaign.put("others", cursor.getString(cursor.getColumnIndex(KEY_OTHERS)));
+            Campaign.put("totalsms", cursor.getString(cursor.getColumnIndex(KEY_TOTALSMS)));
+            Campaign.put("totalsent", cursor.getString(cursor.getColumnIndex(KEY_TOTALSENT)));
+            Campaign.put("remainingsms", cursor.getString(cursor.getColumnIndex(KEY_REMAININGSMS)));
+            CampaignList.add(Campaign);
+        }
+        cursor.close();
+        return  CampaignList;
+    }
+
     //*******************************************************************************************************************************//
     //*******************************************************************************************************************************//
 

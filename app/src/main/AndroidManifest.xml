@@ -15,12 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Reports.Logs"></activity>
+        <activity android:name=".Campaign.Campaign"></activity>
+        <activity android:name=".Reports.Logs" />
         <activity android:name=".Reports.Summary" />
         <activity android:name=".PDFTEST" />
         <activity android:name=".LiveReports.ReportDetail" />
         <activity android:name=".ComposeSMS.PersonalizedSMS" />
-        <activity android:name=".Dashboard.AdminDashboard" />
+        <activity android:name=".Splash.SplashScreen" />
         <activity android:name=".UserManagement.UpdateReseller" />
         <activity android:name=".UserManagement.UpdateUser" />
         <activity android:name=".UserManagement.AddUser" />
@@ -41,9 +42,10 @@
         <activity android:name=".Campaign.ViewDetails" />
         <activity android:name=".Campaign.StopDetails" />
         <activity android:name=".Campaign.UpdateCampaignRoutes" />
-        <activity android:name=".Campaign.Campaign">
+        <activity android:name=".Dashboard.AdminDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

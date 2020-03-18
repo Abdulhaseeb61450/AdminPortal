@@ -19,9 +19,11 @@ import com.example.adminportal.API.APIs;
 import com.example.adminportal.Campaign.Campaign;
 import com.example.adminportal.ComposeSMS.QuickSMS;
 import com.example.adminportal.Contact.ContactManagement;
+import com.example.adminportal.LiveReports.LiveReports;
 import com.example.adminportal.MNP.MNP;
 import com.example.adminportal.Masking.MaskRoutes;
 import com.example.adminportal.R;
+import com.example.adminportal.Reports.OutboxSMS;
 import com.example.adminportal.UserManagement.UsersList;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -95,9 +97,9 @@ public class AdminDashboard extends AppCompatActivity {
 
     public void USER(View view) { startActivity(new Intent(getApplicationContext(), UsersList.class)); }
 
-    public void LIVE(View view) { startActivity(new Intent(getApplicationContext(), UsersList.class)); }
+    public void LIVE(View view) { startActivity(new Intent(getApplicationContext(), LiveReports.class)); }
 
-    public void REPORTS(View view) { startActivity(new Intent(getApplicationContext(), UsersList.class)); }
+    public void REPORTS(View view) { startActivity(new Intent(getApplicationContext(), OutboxSMS.class)); }
 
 
 
