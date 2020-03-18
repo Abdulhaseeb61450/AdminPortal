@@ -119,7 +119,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0/200"
+                    android:text="200/200"
                     android:textSize="@dimen/_10sdp"
                     android:textColor="@color/white"></TextView>
 
@@ -158,7 +158,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0/160"
+                    android:text="160/160"
                     android:textSize="@dimen/_10sdp"
                     android:textColor="@color/white"></TextView>
 

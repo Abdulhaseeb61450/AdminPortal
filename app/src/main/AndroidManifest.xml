@@ -28,7 +28,7 @@
         <activity android:name=".UserManagement.UsersList" />
         <activity android:name=".UserManagement.AddReseller" />
         <activity android:name=".MNP.MNP" />
-        <activity android:name=".ComposeSMS.CampaignSMS" />
+        <activity android:name=".Dashboard.AdminDashboard" />
         <activity android:name=".Contact.AddContact" />
         <activity android:name=".API.APIs" />
         <activity android:name=".LiveReports.LiveReports" />
@@ -42,7 +42,7 @@
         <activity android:name=".Campaign.ViewDetails" />
         <activity android:name=".Campaign.StopDetails" />
         <activity android:name=".Campaign.UpdateCampaignRoutes" />
-        <activity android:name=".Dashboard.AdminDashboard">
+        <activity android:name=".ComposeSMS.CampaignSMS">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
