@@ -54,6 +54,7 @@
         </TextView>
 
         <EditText
+            android:id="@+id/mobileno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="923102922930"

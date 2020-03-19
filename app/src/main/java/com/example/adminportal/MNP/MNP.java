@@ -29,6 +29,8 @@ public class MNP extends AppCompatActivity implements LogOutTimerUtil.LogOutList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mnp);
 
+        mobileno = findViewById(R.id.mobileno);
+
         MNPList = findViewById(R.id.MNPSpinner);
         myAdaptor = new ArrayAdapter<Routes>(MNP.this,
                 android.R.layout.simple_list_item_1, route);
