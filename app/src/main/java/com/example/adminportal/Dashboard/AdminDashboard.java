@@ -59,16 +59,24 @@ public class AdminDashboard extends AppCompatActivity implements LogOutTimerUtil
 
                     switch (item.getItemId()) {
                         case R.id.nav_dash:
-                            Intent intent = new Intent(AdminDashboard.this,AdminDashboard.class);
-                            startActivity(intent);
+                            Intent dashintent = new Intent(AdminDashboard.this,AdminDashboard.class);
+                            startActivity(dashintent);
                             break;
-                        case R.id.nav_manage:
-                            Intent Maskintent = new Intent(AdminDashboard.this,MaskRoutes.class);
-                            startActivity(Maskintent);
+                        case R.id.nav_contact:
+                            Intent ContactIntent = new Intent(AdminDashboard.this,ContactManagement.class);
+                            startActivity(ContactIntent);
                             break;
                         case R.id.nav_comp:
-                            Intent Campintent = new Intent(AdminDashboard.this,Campaign.class);
-                            startActivity(Campintent);
+                            Intent ComposeIntent = new Intent(AdminDashboard.this,QuickSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                        case R.id.nav_repo:
+                            Intent ReportIntent = new Intent(AdminDashboard.this,OutboxSMS.class);
+                            startActivity(ReportIntent);
+                            break;
+                        case R.id.nav_api:
+                            Intent ApiIntent = new Intent(AdminDashboard.this,APIs.class);
+                            startActivity(ApiIntent);
                             break;
                     }
 
