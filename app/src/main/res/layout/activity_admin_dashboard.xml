@@ -84,13 +84,14 @@
                     android:orientation="vertical"
                     android:padding="@dimen/_10sdp">
                     <ImageView
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:src="@drawable/maskingicon"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_40sdp"
                         android:onClick="MaskROutes"></ImageView>
                     <TextView
-                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_10sdp"
@@ -106,13 +107,13 @@
                     android:padding="@dimen/_10sdp">
                     <ImageView
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_gravity="center"
                         android:src="@drawable/event"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_40sdp"
                         android:onClick="Campaign"></ImageView>
                     <TextView
-                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_10sdp"
@@ -128,13 +129,13 @@
                     android:padding="@dimen/_10sdp">
                     <ImageView
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_gravity="center"
                         android:src="@drawable/maskingicon"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_40sdp"
                         android:onClick="CONTACT"></ImageView>
                     <TextView
-                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_10sdp"
@@ -157,13 +158,14 @@
                     android:orientation="vertical"
                     android:padding="@dimen/_10sdp">
                     <ImageView
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:src="@drawable/maskingicon"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_40sdp"
                         android:onClick="APIS"></ImageView>
                     <TextView
-                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_10sdp"
@@ -179,13 +181,13 @@
                     android:padding="@dimen/_10sdp">
                     <ImageView
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_gravity="center"
                         android:src="@drawable/event"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_40sdp"
                         android:onClick="COMPOSESMS"></ImageView>
                     <TextView
-                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_10sdp"
@@ -201,13 +203,13 @@
                     android:padding="@dimen/_10sdp">
                     <ImageView
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_gravity="center"
                         android:src="@drawable/maskingicon"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_40sdp"
                         android:onClick="MNP"></ImageView>
                     <TextView
-                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_10sdp"
@@ -230,13 +232,14 @@
                     android:orientation="vertical"
                     android:padding="@dimen/_10sdp">
                     <ImageView
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:src="@drawable/maskingicon"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_40sdp"
                         android:onClick="USER"></ImageView>
                     <TextView
-                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_10sdp"
@@ -252,13 +255,13 @@
                     android:padding="@dimen/_10sdp">
                     <ImageView
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_gravity="center"
                         android:src="@drawable/event"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_40sdp"
                         android:onClick="REPORTS"></ImageView>
                     <TextView
-                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_10sdp"
@@ -274,13 +277,13 @@
                     android:padding="@dimen/_10sdp">
                     <ImageView
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_gravity="center"
                         android:src="@drawable/maskingicon"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_40sdp"
                         android:onClick="LIVE"></ImageView>
                     <TextView
-                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_10sdp"

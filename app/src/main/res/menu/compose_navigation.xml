@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_outbox"
+        android:title="Outbox SMS" />
+
+    <item
+        android:id="@+id/nav_summary"
+        android:icon="@drawable/ic_next_week_black_24dp"
+        android:title="Summary" />
+
+    <item
+        android:id="@+id/nav_logs"
+        android:icon="@drawable/ic_stop_black_24dp"
+        android:title="Activity Logs" />
+
+</menu>
