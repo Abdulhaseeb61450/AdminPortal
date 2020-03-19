@@ -18,6 +18,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.adminportal.Dashboard.AdminDashboard;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
 
 import org.json.JSONArray;
@@ -28,7 +31,7 @@ import java.util.ArrayList;
 
 import static com.example.adminportal.Masking.MaskRoutes.BASE_URL;
 
-public class UpdateRoutes extends AppCompatActivity {
+public class UpdateRoutes extends AppCompatActivity implements LogOutTimerUtil.LogOutListener {
 
     Spinner MobilinkPure,ZongPure,WaridPure,UfonePure,TelenorPure,MobilinkMNP,ZongMNP,WaridMNP,UfoneMNP,TelenorMNP;
     Button UpdateRoutes;
@@ -412,5 +415,35 @@ public class UpdateRoutes extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonObjectRequest);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void doLogout() {
+        Intent intent = new Intent(UpdateRoutes.this, MainActivity.class);
+        startActivity(intent);
     }
 }

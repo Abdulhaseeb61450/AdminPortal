@@ -24,13 +24,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.adminportal.Dashboard.AdminDashboard;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
 import com.example.adminportal.Campaign.UpdateCampaignRoutes;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class StopDetails extends AppCompatActivity {
+public class StopDetails extends AppCompatActivity implements LogOutTimerUtil.LogOutListener  {
 
     TextView campid,sender,campaigntime,mobilink,telenor,zong,ufone,warid,others,totalsms,totalsent,remainingsms;
     public String CAMPID,SENDER,CAMPAIGNTIME,MOBILINK,TELENOR,ZONG,UFONE,WARID,OTHERS,TOTALSMS,TOTALSENT,REMAININGSMS;
@@ -198,6 +201,36 @@ public class StopDetails extends AppCompatActivity {
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void doLogout() {
+        Intent intent = new Intent(StopDetails.this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

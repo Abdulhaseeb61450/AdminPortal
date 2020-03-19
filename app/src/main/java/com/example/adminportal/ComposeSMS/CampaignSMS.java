@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,11 +14,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.adminportal.Dashboard.AdminDashboard;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
 
 import java.util.Calendar;
 
-public class CampaignSMS extends AppCompatActivity {
+public class CampaignSMS extends AppCompatActivity implements LogOutTimerUtil.LogOutListener {
 
     Calendar calendar;
     DatePickerDialog picker;
@@ -138,5 +142,35 @@ public class CampaignSMS extends AppCompatActivity {
     public void RESET(View view)
     {
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void doLogout() {
+        Intent intent = new Intent(CampaignSMS.this, MainActivity.class);
+        startActivity(intent);
     }
 }

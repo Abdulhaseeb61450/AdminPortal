@@ -1,5 +1,6 @@
 package com.example.adminportal.Campaign;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,9 @@ import android.widget.SimpleAdapter;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.adminportal.Dashboard.AdminDashboard;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
 
 import java.util.ArrayList;
@@ -50,4 +54,5 @@ public class EndCampaign extends Fragment {
 
         return view;
     }
+
 }

@@ -27,6 +27,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.adminportal.Dashboard.AdminDashboard;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
 import com.example.adminportal.Masking.UpdateRoutes;
 
@@ -37,7 +40,7 @@ import org.json.JSONObject;
 import java.util.Arrays;
 import java.util.List;
 
-public class MaskRoutes extends AppCompatActivity {
+public class MaskRoutes extends AppCompatActivity implements LogOutTimerUtil.LogOutListener {
 
     public static String BASE_URL = "http://mobileapi.dotklick.com/sms/masking/masking_api.php?apiskey=DOf0c268c2a4315987s1er4t6&api=";
     ImageView imageView;
@@ -238,6 +241,36 @@ public class MaskRoutes extends AppCompatActivity {
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void doLogout() {
+        Intent intent = new Intent(MaskRoutes.this, MainActivity.class);
+        startActivity(intent);
     }
 
 

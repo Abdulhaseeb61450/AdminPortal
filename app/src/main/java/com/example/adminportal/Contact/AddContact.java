@@ -25,12 +25,15 @@ import android.widget.Toast;
 
 import com.ajts.androidmads.library.ExcelToSQLite;
 import com.ajts.androidmads.library.SQLiteToExcel;
+import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.Database.DbHandler;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
 
 import java.io.File;
 
-public class AddContact extends AppCompatActivity {
+public class AddContact extends AppCompatActivity implements LogOutTimerUtil.LogOutListener {
 
     DbHandler dbHelper;
     private ProgressDialog progressDialog;
@@ -249,6 +252,36 @@ public class AddContact extends AppCompatActivity {
 
     public static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void doLogout() {
+        Intent intent = new Intent(AddContact.this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

@@ -33,6 +33,9 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.adminportal.Campaign.EndCampaign;
 import com.example.adminportal.Campaign.FutureCampaign;
+import com.example.adminportal.Dashboard.AdminDashboard;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
 import com.example.adminportal.Campaign.TodayCampaign;
 import com.example.adminportal.Campaign.ViewDetails;
@@ -46,7 +49,7 @@ import java.util.HashMap;
 
 import static android.view.ViewGroup.FOCUS_BLOCK_DESCENDANTS;
 
-public class Campaign extends AppCompatActivity {
+public class Campaign extends AppCompatActivity implements LogOutTimerUtil.LogOutListener {
 
     private ProgressDialog progressDialog;
     public ListView lv;
@@ -405,5 +408,35 @@ public class Campaign extends AppCompatActivity {
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void doLogout() {
+        Intent intent = new Intent(Campaign.this, MainActivity.class);
+        startActivity(intent);
     }
 }

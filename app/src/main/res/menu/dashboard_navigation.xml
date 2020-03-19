@@ -8,17 +8,17 @@
 
     <item
         android:id="@+id/nav_contact"
-        android:icon="@drawable/ic_today_black_24dp"
+        android:icon="@drawable/ic_contacts_black_24dp"
         android:title="Contact" />
 
     <item
         android:id="@+id/nav_comp"
-        android:icon="@drawable/ic_stop_black_24dp"
+        android:icon="@drawable/ic_compose_sms_black_24dp"
         android:title="Compose" />
 
     <item
         android:id="@+id/nav_repo"
-        android:icon="@drawable/ic_today_black_24dp"
+        android:icon="@drawable/ic_report_black_24dp"
         android:title="Report" />
 
     <item

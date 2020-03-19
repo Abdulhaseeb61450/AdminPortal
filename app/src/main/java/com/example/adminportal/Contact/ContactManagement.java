@@ -18,7 +18,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.Database.DbHandler;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
 import com.example.adminportal.Reports.OutboxSMS;
 
@@ -27,7 +30,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-public class ContactManagement extends AppCompatActivity {
+public class ContactManagement extends AppCompatActivity implements LogOutTimerUtil.LogOutListener {
 
     public List<HashMap<String, String>> AllContactList = new ArrayList<>();
     public List<HashMap<String,String>> BackUp = new ArrayList<>();
@@ -129,5 +132,35 @@ public class ContactManagement extends AppCompatActivity {
         lv.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void doLogout() {
+        Intent intent = new Intent(ContactManagement.this, MainActivity.class);
+        startActivity(intent);
     }
 }

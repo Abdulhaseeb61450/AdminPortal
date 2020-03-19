@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <ImageView
-        android:layout_marginTop="10dp"
-        android:id="@+id/simpleImageView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/camp" />
+    <FrameLayout
+        android:id="@+id/fragment1_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom1_navigation"/>
 
-    <TextView
-        android:layout_below="@+id/simpleImageView"
-        android:id="@+id/textView"
-        android:layout_width="fill_parent"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom1_navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Current Campaign"
-        android:textColor="@color/orange"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        app:menu="@menu/dashboard_navigation"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground">
 
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <ListView
         android:id="@+id/currentcampaign"
-        android:layout_below="@id/textView"
+        android:layout_below="@+id/bottom_navigation"
         android:layout_marginTop="5dp"
         android:divider="@android:color/white"
         android:layout_marginRight="@dimen/text_size15dp"
         android:layout_marginLeft="@dimen/text_size15dp"
         android:dividerHeight="2dp"
+        android:background="@drawable/layout_table_corners"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
     </ListView>

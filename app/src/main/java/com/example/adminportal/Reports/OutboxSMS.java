@@ -38,7 +38,10 @@ import com.ajts.androidmads.library.SQLiteToExcel;
 import com.example.adminportal.API.ExportApi;
 import com.example.adminportal.Campaign.Campaign;
 import com.example.adminportal.Campaign.ViewDetails;
+import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.Database.DbHandler;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.Masking.MaskRoutes;
 import com.example.adminportal.R;
 import com.itextpdf.text.BaseColor;
@@ -69,7 +72,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-public class OutboxSMS extends AppCompatActivity implements ExportOptions.ExampleDialogListener {
+public class OutboxSMS extends AppCompatActivity implements ExportOptions.ExampleDialogListener, LogOutTimerUtil.LogOutListener {
 
     TextView outbox,summary,logs;
     private static final String TAG = "PdfCreatorActivity";
@@ -455,5 +458,35 @@ public class OutboxSMS extends AppCompatActivity implements ExportOptions.Exampl
             lv.setAdapter(adapter);
 
             adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void doLogout() {
+        Intent intent = new Intent(OutboxSMS.this, MainActivity.class);
+        startActivity(intent);
     }
 }

@@ -27,7 +27,10 @@ import android.widget.Toast;
 
 import com.ajts.androidmads.library.SQLiteToExcel;
 import com.example.adminportal.Contact.AddContact;
+import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.Database.DbHandler;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.Masking.MaskRoutes;
 import com.example.adminportal.R;
 import com.itextpdf.text.BaseColor;
@@ -51,7 +54,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 
-public class APIs extends AppCompatActivity implements ExportApi.ExampleDialogListener {
+public class APIs extends AppCompatActivity implements ExportApi.ExampleDialogListener, LogOutTimerUtil.LogOutListener{
 
     Button dialog;
     ListView lv;
@@ -308,5 +311,35 @@ public class APIs extends AppCompatActivity implements ExportApi.ExampleDialogLi
         document.close();
         Toast.makeText(APIs.this, "PDF CREATED", Toast.LENGTH_LONG).show();
         Log.e("safiya", Data.toString());
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void doLogout() {
+        Intent intent = new Intent(APIs.this, MainActivity.class);
+        startActivity(intent);
     }
 }

@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -16,11 +17,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.adminportal.Dashboard.AdminDashboard;
+import com.example.adminportal.LogOutTimerUtil;
+import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
 
 import java.util.ArrayList;
 
-public class UpdateCampaignRoutes extends AppCompatActivity {
+public class UpdateCampaignRoutes extends AppCompatActivity implements LogOutTimerUtil.LogOutListener {
 
     public ArrayAdapter<String> myAdaptor,myAdaptor1,myAdaptor2,myAdaptor3,myAdaptor4,myAdaptor5,myAdaptor6,myAdaptor7,myAdaptor8,myAdaptor9;
     Spinner Mobilink,Zong,Warid,Ufone,Telenor,MobilinkFlog,ZongFlog,WaridFlog,UfoneFlog,TelenorFlog;
@@ -136,5 +140,35 @@ public class UpdateCampaignRoutes extends AppCompatActivity {
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogOutTimerUtil.startLogoutTimer(this, this);
+    }
+
+    @Override
+    public void doLogout() {
+        Intent intent = new Intent(UpdateCampaignRoutes.this, MainActivity.class);
+        startActivity(intent);
     }
 }
