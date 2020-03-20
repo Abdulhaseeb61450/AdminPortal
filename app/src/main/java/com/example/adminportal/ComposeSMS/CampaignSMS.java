@@ -48,6 +48,10 @@ public class CampaignSMS extends AppCompatActivity implements LogOutTimerUtil.Lo
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         bottomNav.getMenu().getItem(2).setChecked(true);
 
+        BottomNavigationView bottomNav1 = findViewById(R.id.bottom_navigation);
+        bottomNav1.setOnNavigationItemSelectedListener(navListenerlast);
+        bottomNav1.getMenu().getItem(1).setChecked(true);
+
         settime = findViewById(R.id.settime);
         messagelimit = findViewById(R.id.messagelimit);
         message = findViewById(R.id.message);
@@ -145,6 +149,33 @@ public class CampaignSMS extends AppCompatActivity implements LogOutTimerUtil.Lo
         });
     }
 
+    private BottomNavigationView.OnNavigationItemSelectedListener navListenerlast =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_sms:
+                            item.setCheckable(true);
+                            Intent dashintent = new Intent(CampaignSMS.this,QuickSMS.class);
+                            startActivity(dashintent);
+                            break;
+                        case R.id.nav_campaign:
+                            item.setCheckable(true);
+                            Intent ContactIntent = new Intent(CampaignSMS.this, CampaignSMS.class);
+                            startActivity(ContactIntent);
+                            break;
+                        case R.id.nav_personal:
+                            item.setCheckable(true);
+                            Intent ComposeIntent = new Intent(CampaignSMS.this, PersonalizedSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                    }
+
+                    return true;
+                }
+            };
+
     public void SEND(View view)
     {
 
@@ -219,6 +250,13 @@ public class CampaignSMS extends AppCompatActivity implements LogOutTimerUtil.Lo
     @Override
     public void doLogout() {
         Intent intent = new Intent(CampaignSMS.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(CampaignSMS.this,AdminDashboard.class);
         startActivity(intent);
     }
 }

@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.adminportal.API.APIs;
+import com.example.adminportal.Campaign.Campaign;
 import com.example.adminportal.Contact.ContactManagement;
 import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.LogOutTimerUtil;
@@ -49,6 +50,9 @@ public class QuickSMS extends AppCompatActivity implements LogOutTimerUtil.LogOu
         BottomNavigationView bottomNav = findViewById(R.id.bottom1_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         bottomNav.getMenu().getItem(2).setChecked(true);
+
+        BottomNavigationView bottomNav1 = findViewById(R.id.bottom_navigation);
+        bottomNav1.setOnNavigationItemSelectedListener(navListenerlast);
 
         contactlist.addTextChangedListener(new TextWatcher() {
             @Override
@@ -123,6 +127,33 @@ public class QuickSMS extends AppCompatActivity implements LogOutTimerUtil.LogOu
 
     }
 
+    private BottomNavigationView.OnNavigationItemSelectedListener navListenerlast =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_sms:
+                            item.setCheckable(true);
+                            Intent dashintent = new Intent(QuickSMS.this,QuickSMS.class);
+                            startActivity(dashintent);
+                            break;
+                        case R.id.nav_campaign:
+                            item.setCheckable(true);
+                            Intent ContactIntent = new Intent(QuickSMS.this, CampaignSMS.class);
+                            startActivity(ContactIntent);
+                            break;
+                        case R.id.nav_personal:
+                            item.setCheckable(true);
+                            Intent ComposeIntent = new Intent(QuickSMS.this, PersonalizedSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                    }
+
+                    return true;
+                }
+            };
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -151,9 +182,6 @@ public class QuickSMS extends AppCompatActivity implements LogOutTimerUtil.LogOu
                             startActivity(ApiIntent);
                             break;
                     }
-
-                    /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment1_container,
-                            selectedFragment).commit();*/
 
                     return true;
                 }
@@ -213,6 +241,13 @@ public class QuickSMS extends AppCompatActivity implements LogOutTimerUtil.LogOu
     @Override
     public void doLogout() {
         Intent intent = new Intent(QuickSMS.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(QuickSMS.this,AdminDashboard.class);
         startActivity(intent);
     }
 }

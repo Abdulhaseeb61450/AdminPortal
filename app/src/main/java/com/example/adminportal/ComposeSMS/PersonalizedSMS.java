@@ -27,7 +27,38 @@ public class PersonalizedSMS extends AppCompatActivity implements LogOutTimerUti
         BottomNavigationView bottomNav = findViewById(R.id.bottom1_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         bottomNav.getMenu().getItem(2).setChecked(true);
+
+        BottomNavigationView bottomNav1 = findViewById(R.id.bottom_navigation);
+        bottomNav1.setOnNavigationItemSelectedListener(navListenerlast);
+        bottomNav1.getMenu().getItem(2).setChecked(true);
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListenerlast =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_sms:
+                            item.setCheckable(true);
+                            Intent dashintent = new Intent(PersonalizedSMS.this,QuickSMS.class);
+                            startActivity(dashintent);
+                            break;
+                        case R.id.nav_campaign:
+                            item.setCheckable(true);
+                            Intent ContactIntent = new Intent(PersonalizedSMS.this, CampaignSMS.class);
+                            startActivity(ContactIntent);
+                            break;
+                        case R.id.nav_personal:
+                            item.setCheckable(true);
+                            Intent ComposeIntent = new Intent(PersonalizedSMS.this, PersonalizedSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                    }
+
+                    return true;
+                }
+            };
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -92,6 +123,13 @@ public class PersonalizedSMS extends AppCompatActivity implements LogOutTimerUti
     @Override
     public void doLogout() {
         Intent intent = new Intent(PersonalizedSMS.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(PersonalizedSMS.this,AdminDashboard.class);
         startActivity(intent);
     }
 }

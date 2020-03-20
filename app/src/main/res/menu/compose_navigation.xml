@@ -4,16 +4,16 @@
     <item
         android:id="@+id/nav_sms"
         android:icon="@drawable/ic_sms_black_24dp"
-        android:title="Compose SMS" />
+        android:title="Compose" />
 
     <item
         android:id="@+id/nav_campaign"
         android:icon="@drawable/ic_speaker_group_black_24dp"
-        android:title="Camapign SMS" />
+        android:title="Camapaign" />
 
     <item
         android:id="@+id/nav_personal"
         android:icon="@drawable/ic_person_sms_black_24dp"
-        android:title="Personalized SMS" />
+        android:title="Personalized" />
 
 </menu>
