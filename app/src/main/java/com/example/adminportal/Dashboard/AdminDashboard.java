@@ -35,6 +35,7 @@ public class AdminDashboard extends AppCompatActivity implements LogOutTimerUtil
 
     SharedPreferences sharedpreferences;
     int ALL_PERMISSIONS = 101;
+    public  BottomNavigationView bottomNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class AdminDashboard extends AppCompatActivity implements LogOutTimerUtil
         BottomNavigationView bottomNav = findViewById(R.id.bottom1_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
+
     }
 
 
@@ -55,7 +57,6 @@ public class AdminDashboard extends AppCompatActivity implements LogOutTimerUtil
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
 
                     switch (item.getItemId()) {
                         case R.id.nav_dash:
@@ -79,9 +80,6 @@ public class AdminDashboard extends AppCompatActivity implements LogOutTimerUtil
                             startActivity(ApiIntent);
                             break;
                     }
-
-                    /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment1_container,
-                            selectedFragment).commit();*/
 
                     return true;
                 }

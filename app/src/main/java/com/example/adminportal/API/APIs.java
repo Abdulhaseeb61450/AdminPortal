@@ -1,8 +1,10 @@
 package com.example.adminportal.API;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
 
 import android.Manifest;
 import android.app.ProgressDialog;
@@ -17,6 +19,7 @@ import android.os.Environment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -26,13 +29,18 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.ajts.androidmads.library.SQLiteToExcel;
+import com.example.adminportal.Campaign.TodayCampaign;
+import com.example.adminportal.ComposeSMS.QuickSMS;
 import com.example.adminportal.Contact.AddContact;
+import com.example.adminportal.Contact.ContactManagement;
 import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.Database.DbHandler;
 import com.example.adminportal.LogOutTimerUtil;
 import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.Masking.MaskRoutes;
 import com.example.adminportal.R;
+import com.example.adminportal.Reports.OutboxSMS;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -80,6 +88,12 @@ public class APIs extends AppCompatActivity implements ExportApi.ExampleDialogLi
         dbHelper = new DbHandler(getApplicationContext());
         context = this;
 
+        BottomNavigationView bottomNav = findViewById(R.id.bottom1_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+        bottomNav.getMenu().getItem(4).setChecked(true);
+
+
         for (int i = 0; i < 5; i++) {
             HashMap<String, String> InsideData = new HashMap<>();
             InsideData.put("ID", "1");
@@ -121,6 +135,42 @@ public class APIs extends AppCompatActivity implements ExportApi.ExampleDialogLi
             public void afterTextChanged(Editable s) { }
         });
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_dash:
+                            Intent dashintent = new Intent(APIs.this,AdminDashboard.class);
+                            startActivity(dashintent);
+                            break;
+                        case R.id.nav_contact:
+                            Intent ContactIntent = new Intent(APIs.this, ContactManagement.class);
+                            startActivity(ContactIntent);
+                            break;
+                        case R.id.nav_comp:
+                            Intent ComposeIntent = new Intent(APIs.this, QuickSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                        case R.id.nav_repo:
+                            Intent ReportIntent = new Intent(APIs.this, OutboxSMS.class);
+                            startActivity(ReportIntent);
+                            break;
+                        case R.id.nav_api:
+                            Intent ApiIntent = new Intent(APIs.this,APIs.class);
+                            startActivity(ApiIntent);
+                            break;
+                    }
+
+                    /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment1_container,
+                            selectedFragment).commit();*/
+
+                    return true;
+                }
+            };
 
 
     public void OPENDIALOG(View view)

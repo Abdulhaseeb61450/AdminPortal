@@ -1,5 +1,6 @@
 package com.example.adminportal.Contact;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,12 +20,15 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.example.adminportal.API.APIs;
+import com.example.adminportal.ComposeSMS.QuickSMS;
 import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.Database.DbHandler;
 import com.example.adminportal.LogOutTimerUtil;
 import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
 import com.example.adminportal.Reports.OutboxSMS;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,6 +49,11 @@ public class ContactManagement extends AppCompatActivity implements LogOutTimerU
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_management);
+
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom1_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        bottomNav.getMenu().getItem(1).setChecked(true);
 
         for (int i = 0; i < 5; i++)
         {
@@ -104,6 +114,38 @@ public class ContactManagement extends AppCompatActivity implements LogOutTimerU
         });
 
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_dash:
+                            Intent dashintent = new Intent(ContactManagement.this,AdminDashboard.class);
+                            startActivity(dashintent);
+                            break;
+                        case R.id.nav_contact:
+                            Intent ContactIntent = new Intent(ContactManagement.this,ContactManagement.class);
+                            startActivity(ContactIntent);
+                            break;
+                        case R.id.nav_comp:
+                            Intent ComposeIntent = new Intent(ContactManagement.this, QuickSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                        case R.id.nav_repo:
+                            Intent ReportIntent = new Intent(ContactManagement.this,OutboxSMS.class);
+                            startActivity(ReportIntent);
+                            break;
+                        case R.id.nav_api:
+                            Intent ApiIntent = new Intent(ContactManagement.this, APIs.class);
+                            startActivity(ApiIntent);
+                            break;
+                    }
+
+                    return true;
+                }
+            };
 
     public void add(View view)
     {

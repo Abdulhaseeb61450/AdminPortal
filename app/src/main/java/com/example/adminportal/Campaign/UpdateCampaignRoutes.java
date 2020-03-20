@@ -10,17 +10,24 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.adminportal.API.APIs;
+import com.example.adminportal.ComposeSMS.QuickSMS;
+import com.example.adminportal.Contact.ContactManagement;
 import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.LogOutTimerUtil;
 import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
+import com.example.adminportal.Reports.OutboxSMS;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -46,6 +53,14 @@ public class UpdateCampaignRoutes extends AppCompatActivity implements LogOutTim
         isNetworkConnectionAvailable();
 
         progressDialog.dismiss();
+
+        BottomNavigationView bottomNavlast = findViewById(R.id.bottom1_navigation);
+        bottomNavlast.setOnNavigationItemSelectedListener(navListenerlast);
+        bottomNavlast.getMenu().getItem(0).setCheckable(false);
+        bottomNavlast.getMenu().getItem(1).setCheckable(false);
+        bottomNavlast.getMenu().getItem(2).setCheckable(false);
+        bottomNavlast.getMenu().getItem(3).setCheckable(false);
+        bottomNavlast.getMenu().getItem(4).setCheckable(false);
 
         Mobilink = findViewById(R.id.Mobilink);
         myAdaptor = new ArrayAdapter<String>(UpdateCampaignRoutes.this,
@@ -108,6 +123,43 @@ public class UpdateCampaignRoutes extends AppCompatActivity implements LogOutTim
         myAdaptor9.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         TelenorFlog.setAdapter(myAdaptor9);
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListenerlast =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_dash:
+                            item.setCheckable(true);
+                            Intent dashintent = new Intent(UpdateCampaignRoutes.this,AdminDashboard.class);
+                            startActivity(dashintent);
+                            break;
+                        case R.id.nav_contact:
+                            item.setCheckable(true);
+                            Intent ContactIntent = new Intent(UpdateCampaignRoutes.this, ContactManagement.class);
+                            startActivity(ContactIntent);
+                            break;
+                        case R.id.nav_comp:
+                            item.setCheckable(true);
+                            Intent ComposeIntent = new Intent(UpdateCampaignRoutes.this, QuickSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                        case R.id.nav_repo:
+                            item.setCheckable(true);
+                            Intent ReportIntent = new Intent(UpdateCampaignRoutes.this, OutboxSMS.class);
+                            startActivity(ReportIntent);
+                            break;
+                        case R.id.nav_api:
+                            item.setCheckable(true);
+                            Intent ApiIntent = new Intent(UpdateCampaignRoutes.this, APIs.class);
+                            startActivity(ApiIntent);
+                            break;
+                    }
+
+                    return true;
+                }
+            };
 
     public boolean isNetworkConnectionAvailable(){
         ConnectivityManager cm =

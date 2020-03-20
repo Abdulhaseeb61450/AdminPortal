@@ -31,14 +31,19 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.adminportal.API.APIs;
 import com.example.adminportal.Campaign.EndCampaign;
 import com.example.adminportal.Campaign.FutureCampaign;
+import com.example.adminportal.ComposeSMS.QuickSMS;
+import com.example.adminportal.Contact.ContactManagement;
 import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.LogOutTimerUtil;
 import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
 import com.example.adminportal.Campaign.TodayCampaign;
 import com.example.adminportal.Campaign.ViewDetails;
+import com.example.adminportal.Reports.OutboxSMS;
+import com.example.adminportal.UserManagement.UsersList;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONException;
@@ -81,6 +86,14 @@ public class Campaign extends AppCompatActivity implements LogOutTimerUtil.LogOu
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
+        BottomNavigationView bottomNavlast = findViewById(R.id.bottom1_navigation);
+        bottomNavlast.setOnNavigationItemSelectedListener(navListenerlast);
+        bottomNavlast.getMenu().getItem(0).setCheckable(false);
+        bottomNavlast.getMenu().getItem(1).setCheckable(false);
+        bottomNavlast.getMenu().getItem(2).setCheckable(false);
+        bottomNavlast.getMenu().getItem(3).setCheckable(false);
+        bottomNavlast.getMenu().getItem(4).setCheckable(false);
+
         //I added this if statement to keep the selected fragment when rotating the device
         if (savedInstanceState == null) {
             //GetCurrentData();
@@ -88,6 +101,43 @@ public class Campaign extends AppCompatActivity implements LogOutTimerUtil.LogOu
                     new TodayCampaign()).commit();
         }
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListenerlast =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_dash:
+                            item.setCheckable(true);
+                            Intent dashintent = new Intent(Campaign.this,AdminDashboard.class);
+                            startActivity(dashintent);
+                            break;
+                        case R.id.nav_contact:
+                            item.setCheckable(true);
+                            Intent ContactIntent = new Intent(Campaign.this, ContactManagement.class);
+                            startActivity(ContactIntent);
+                            break;
+                        case R.id.nav_comp:
+                            item.setCheckable(true);
+                            Intent ComposeIntent = new Intent(Campaign.this, QuickSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                        case R.id.nav_repo:
+                            item.setCheckable(true);
+                            Intent ReportIntent = new Intent(Campaign.this, OutboxSMS.class);
+                            startActivity(ReportIntent);
+                            break;
+                        case R.id.nav_api:
+                            item.setCheckable(true);
+                            Intent ApiIntent = new Intent(Campaign.this, APIs.class);
+                            startActivity(ApiIntent);
+                            break;
+                    }
+
+                    return true;
+                }
+            };
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {

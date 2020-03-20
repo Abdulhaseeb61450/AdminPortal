@@ -1,5 +1,6 @@
 package com.example.adminportal.Reports;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -24,6 +25,7 @@ import android.print.PrintManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -34,12 +36,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ajts.androidmads.library.SQLiteToExcel;
+import com.example.adminportal.API.APIs;
 import com.example.adminportal.Campaign.ViewDetails;
+import com.example.adminportal.ComposeSMS.QuickSMS;
+import com.example.adminportal.Contact.ContactManagement;
 import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.Database.DbHandler;
 import com.example.adminportal.LogOutTimerUtil;
 import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -95,6 +101,10 @@ public class Logs extends AppCompatActivity implements ExportOptions.ExampleDial
         setContentView(R.layout.activity_logs);
 
         inputSearch = findViewById(R.id.inputSearch);
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom1_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        bottomNav.getMenu().getItem(3).setChecked(true);
 
         for (int i = 0; i < 5; i++) {
             HashMap<String, String> InsideData = new HashMap<>();
@@ -215,6 +225,38 @@ public class Logs extends AppCompatActivity implements ExportOptions.ExampleDial
         ExportOptions exampleDialog = new ExportOptions();
         exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_dash:
+                            Intent dashintent = new Intent(Logs.this,AdminDashboard.class);
+                            startActivity(dashintent);
+                            break;
+                        case R.id.nav_contact:
+                            Intent ContactIntent = new Intent(Logs.this, ContactManagement.class);
+                            startActivity(ContactIntent);
+                            break;
+                        case R.id.nav_comp:
+                            Intent ComposeIntent = new Intent(Logs.this, QuickSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                        case R.id.nav_repo:
+                            Intent ReportIntent = new Intent(Logs.this,OutboxSMS.class);
+                            startActivity(ReportIntent);
+                            break;
+                        case R.id.nav_api:
+                            Intent ApiIntent = new Intent(Logs.this, APIs.class);
+                            startActivity(ApiIntent);
+                            break;
+                    }
+
+                    return true;
+                }
+            };
 
 
     public void EXPORT()

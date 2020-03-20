@@ -1,6 +1,8 @@
 package com.example.adminportal.ComposeSMS;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -8,16 +10,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.adminportal.API.APIs;
+import com.example.adminportal.Contact.ContactManagement;
 import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.LogOutTimerUtil;
 import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
+import com.example.adminportal.Reports.OutboxSMS;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
 
@@ -36,6 +43,10 @@ public class CampaignSMS extends AppCompatActivity implements LogOutTimerUtil.Lo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_campaign_sms);
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom1_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        bottomNav.getMenu().getItem(2).setChecked(true);
 
         settime = findViewById(R.id.settime);
         messagelimit = findViewById(R.id.messagelimit);
@@ -143,6 +154,43 @@ public class CampaignSMS extends AppCompatActivity implements LogOutTimerUtil.Lo
     {
 
     }
+
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_dash:
+                            Intent dashintent = new Intent(CampaignSMS.this,AdminDashboard.class);
+                            startActivity(dashintent);
+                            break;
+                        case R.id.nav_contact:
+                            Intent ContactIntent = new Intent(CampaignSMS.this, ContactManagement.class);
+                            startActivity(ContactIntent);
+                            break;
+                        case R.id.nav_comp:
+                            Intent ComposeIntent = new Intent(CampaignSMS.this,QuickSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                        case R.id.nav_repo:
+                            Intent ReportIntent = new Intent(CampaignSMS.this, OutboxSMS.class);
+                            startActivity(ReportIntent);
+                            break;
+                        case R.id.nav_api:
+                            Intent ApiIntent = new Intent(CampaignSMS.this, APIs.class);
+                            startActivity(ApiIntent);
+                            break;
+                    }
+
+                    /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment1_container,
+                            selectedFragment).commit();*/
+
+                    return true;
+                }
+            };
 
     @Override
     protected void onStart() {

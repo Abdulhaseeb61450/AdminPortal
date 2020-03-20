@@ -19,17 +19,22 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ajts.androidmads.library.ExcelToSQLite;
 import com.ajts.androidmads.library.SQLiteToExcel;
+import com.example.adminportal.API.APIs;
+import com.example.adminportal.ComposeSMS.QuickSMS;
 import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.Database.DbHandler;
 import com.example.adminportal.LogOutTimerUtil;
 import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
+import com.example.adminportal.Reports.OutboxSMS;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.File;
 
@@ -52,6 +57,10 @@ public class AddContact extends AppCompatActivity implements LogOutTimerUtil.Log
 
         DbHandler db = new DbHandler(this);
         dbHelper = new DbHandler(getApplicationContext());
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom1_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        bottomNav.getMenu().getItem(1).setChecked(true);
 
     }
 
@@ -253,6 +262,38 @@ public class AddContact extends AppCompatActivity implements LogOutTimerUtil.Log
     public static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_dash:
+                            Intent dashintent = new Intent(AddContact.this,AdminDashboard.class);
+                            startActivity(dashintent);
+                            break;
+                        case R.id.nav_contact:
+                            Intent ContactIntent = new Intent(AddContact.this,ContactManagement.class);
+                            startActivity(ContactIntent);
+                            break;
+                        case R.id.nav_comp:
+                            Intent ComposeIntent = new Intent(AddContact.this, QuickSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                        case R.id.nav_repo:
+                            Intent ReportIntent = new Intent(AddContact.this, OutboxSMS.class);
+                            startActivity(ReportIntent);
+                            break;
+                        case R.id.nav_api:
+                            Intent ApiIntent = new Intent(AddContact.this, APIs.class);
+                            startActivity(ApiIntent);
+                            break;
+                    }
+
+                    return true;
+                }
+            };
 
     @Override
     protected void onStart() {

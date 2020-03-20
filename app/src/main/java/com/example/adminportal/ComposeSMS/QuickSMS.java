@@ -1,21 +1,28 @@
 package com.example.adminportal.ComposeSMS;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.adminportal.API.APIs;
+import com.example.adminportal.Contact.ContactManagement;
 import com.example.adminportal.Dashboard.AdminDashboard;
 import com.example.adminportal.LogOutTimerUtil;
 import com.example.adminportal.Login.MainActivity;
 import com.example.adminportal.R;
+import com.example.adminportal.Reports.OutboxSMS;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.w3c.dom.Text;
@@ -38,6 +45,10 @@ public class QuickSMS extends AppCompatActivity implements LogOutTimerUtil.LogOu
         senderid = findViewById(R.id.senderid);
         message = findViewById(R.id.message);
         messagelimit = findViewById(R.id.messagelimit);
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom1_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        bottomNav.getMenu().getItem(2).setChecked(true);
 
         contactlist.addTextChangedListener(new TextWatcher() {
             @Override
@@ -111,6 +122,42 @@ public class QuickSMS extends AppCompatActivity implements LogOutTimerUtil.LogOu
         });
 
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_dash:
+                            Intent dashintent = new Intent(QuickSMS.this,AdminDashboard.class);
+                            startActivity(dashintent);
+                            break;
+                        case R.id.nav_contact:
+                            Intent ContactIntent = new Intent(QuickSMS.this, ContactManagement.class);
+                            startActivity(ContactIntent);
+                            break;
+                        case R.id.nav_comp:
+                            Intent ComposeIntent = new Intent(QuickSMS.this,QuickSMS.class);
+                            startActivity(ComposeIntent);
+                            break;
+                        case R.id.nav_repo:
+                            Intent ReportIntent = new Intent(QuickSMS.this, OutboxSMS.class);
+                            startActivity(ReportIntent);
+                            break;
+                        case R.id.nav_api:
+                            Intent ApiIntent = new Intent(QuickSMS.this, APIs.class);
+                            startActivity(ApiIntent);
+                            break;
+                    }
+
+                    /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment1_container,
+                            selectedFragment).commit();*/
+
+                    return true;
+                }
+            };
 
     public void RESET(View view)
     {
